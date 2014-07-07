@@ -9,14 +9,15 @@
 <?php endif; ?>
 
 <?php if($comments) : ?>
-	<ol>
+	<ol class="comments-list">
 		<?php foreach($comments as $comment) : ?>
 		<li id="comment-<?php comment_ID(); ?>">
+			<p class="meta"><strong><?php comment_author_link(); ?></strong> on <?php comment_date(); ?> at <?php comment_time(); ?></p>
 			<?php if ($comment->comment_approved == '0') : ?>
 			<p>Your comment is awaiting approval</p>
 		<?php endif; ?>
 		<?php comment_text(); ?>
-		<p class="meta"><?php comment_type(); ?> by <?php comment_author_link(); ?> on <?php comment_date(); ?> at <?php comment_time(); ?></p>
+		<div class="comment-end"></div>
 	</li>
 <?php endforeach; ?>
 </ol>

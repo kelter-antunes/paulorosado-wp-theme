@@ -820,6 +820,14 @@ Version: 0.5
  	width: 580px;
  }
 
+ ol.comments-list {
+ 	margin: 0;
+ 	padding: 0;
+ }
+ ol.comments-list li {
+ 	list-style: none;
+ }
+
  label { margin-right:20px }
 
  input.button {
@@ -926,6 +934,10 @@ Version: 0.5
  	.top-menu {
  		width: 473px;
  	}
+
+ 	.top-bar{
+ 		width: 100%;
+ 	}
  	.bio {
  		font-size: 12px;
  		line-height: normal;
@@ -943,6 +955,7 @@ Version: 0.5
  	}
  	.top-search {
  		width: 231px;
+ 		float: right;
  	}
  	#commentform textarea {
  		width: 100%;
