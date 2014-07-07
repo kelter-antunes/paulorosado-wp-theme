@@ -17,6 +17,13 @@ session_start();
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".featured-summary").fitVids();
+		$(".postcontent").fitVids();
+	});
+	</script>
 
 	<?php
 /*
@@ -31,59 +38,52 @@ wp_get_archives( 'type=monthly&format=link' );
 ?>
 </head>
 <body>
-
+	<!-- top -->
 	<div class="top">
-		<div class="container img-home">
+		<div class="container img-page">
+			<div class="row">
+				<div class="top-bar">
 
-			<div class="top-bar">
+					<div class="span6 top-menu">
+						<ul>
+							<li><a href="/category/management/">Management &amp; Leadership</a></li>
+							<li><a href="/category/it/">Information Technology</a></li>
+							<li><a href="/category/empreendorismo/">Empreendorismo em Portugal</a></li>
+						</ul>
+					</div>
 
-				<div class="top-menu">
-					<ul>
-						<li><a href="/management/">Management &amp; Leadership</a></li>
-						<li><a href="/it/">Information Technology</a></li>
-						<li><a href="/empreendorismo/">Empreendorismo em Portugal</a></li>
-					</ul>
+					<div class="span1 top-links">
+						<ul>
+							<li style="padding-right: 15px;">
+								<a href="http://www.outsystems.com" class="icon-os-s" title="OutSystems - High Productivity PaaS for Enterprise Web and Mobile Applications">OutSystems</a>
+							</li>
+							<li>
+								<a href="https://twitter.com/paulorosado" class="icon-twitter-s">Twitter</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="span5 top-search">
+
+						<?php get_search_form(); ?>
+						
+					</div>
+
 				</div>
 
-				<div class="top-links">
-					<ul> 
-						<li><a href="http://www.outsystems.com" class="icon-os-s" title="OutSystems - High Productivity PaaS for Enterprise Web and Mobile Applications">OutSystems</a></li>
-						<li><a href="https://twitter.com/paulorosado" class="icon-twitter-s">Twitter</a></li>
-					</ul>
-				</div>
+				<div class="span12 header-page">
+					<div class="row">
+						<div class="span12"><div class="logo-page"><h1><a href="/" accesskey="1">Paulo Rosado</a></h1></div></div></div>
+						<div class="row">
+							<div class="span6"><div class="lead-page"><h2>Management, Entrepreneurship, IT and other ramblings on stumbling and thriving in the high-tech world</h2></div></div><div class="clearfix"></div></div>
 
-				<div class="top-search">
+							<div class="clearfix"></div>
+						</div><div class="clearfix"></div>
 
-					<form method="get" action="http://www.paulorosado.com/mt/mt-search.cgi">
-						<input type="text" class="search-field" name="search" value="">
 
-						<input type="hidden" name="IncludeBlogs" value="6">
-
-						<input type="hidden" name="limit" value="20">
-						<input type="submit" class="search-icon" accesskey="4" value="Search">
-					</form>
-
+					</div>
+					<div class="clearfix"></div>
 				</div>
 
 			</div>
-
-			<div class="header">
-				<div class="logo"><h1><a href="/" accesskey="1">Paulo Rosado</a></h1></div>
-				<div class="lead"><h2>Management, Entrepreneurship, IT and other ramblings on stumbling and thriving in the high-tech world</h2></div>
-				<div class="bio">
-					Besides my daily job as CEO of <a href="http://www.outsystems.com" target="_blank">OutSystems</a>, I occasionally help entrepreneurs grow their businesses and avoid obvious mistakes. 
-
-				</div>
-			</div>
-
-			<div class="cat-menu">
-				<ul>
-					<li><a href="/management" class="ml">Management &amp; Leadership</a></li>
-					<li><a href="/it" class="it">Information Technology</a></li>
-					<li class="pt"><a href="/empreendorismo" class="pt">Empreendorismo em Portugal</a></li>
-				</ul>
-			</div>
-
-		</div>
-
-	</div>
+			<!-- \top -->

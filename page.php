@@ -1,18 +1,41 @@
 <?php
-	get_header();
+get_header();
 ?>
-<div class="container">
-	<h1><a href="<?php echo get_option( 'home' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-</div>
-<div class="container">
-	<?php if ( have_posts() ) : ?>
-	<?php while ( have_posts() ) : the_post(); ?>
 
-	<?php the_content(); ?>
+<!-- main content -->
+<div id="maincontent">
+	<div class="container">
+		<div class="row">
 
-<?php endwhile; ?>
-<?php endif; ?>
+			<div class="span12">
+				<h1>
+					<?php the_title(); ?>
+				</h1>
+			</div>
+
+			<?php if ( have_posts() ) : ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+			<div class="span8">			
+				<div class="featured-summary">
+					<?php the_content(); ?>
+				</div>
+				<div class="asset-footer"></div>
+			</div>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+	<?php get_sidebar(); ?>	
+
 </div>
+</div>
+</div>
+<!-- /End main content -->
+
+
 <?php
-	get_footer();
+get_footer();
 ?>
+
+
+
